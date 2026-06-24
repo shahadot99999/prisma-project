@@ -59,7 +59,19 @@ return user;
 
 }
 
-const getMyProfileFromDb = async()=>{
+const getMyProfileFromDb = async(userId : string)=>{
+
+    const user = await prisma.user.findUniqueOrThrow({
+        where : { id : userId},
+        omit:{
+            password: true
+        },
+        include:{
+            profile: true 
+        }
+    });
+    
+    return user;
 };
 
 
