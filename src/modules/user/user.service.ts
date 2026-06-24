@@ -59,6 +59,12 @@ return user;
 
 }
 
+const getMyProfileFromDb = async()=>{
+};
+
+
+
 export const userService = {
-    registerUserIntoDB
+    registerUserIntoDB, 
+    getMyProfileFromDb
 }
