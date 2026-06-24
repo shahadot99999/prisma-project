@@ -6,6 +6,7 @@ import { prisma } from "./lib/prisma";
 import  httpStatus  from "http-status";
 import bcrypt from "bcryptjs";
 import {  userRoutes } from "./modules/user/user.route";
+import { authRoutes } from "./modules/auth/auth.route";
 
 //import { config } from "dotenv";
 
@@ -31,5 +32,7 @@ app.get("/", (req:Request, res: Response)=>{
 //app.post()
 
 app.use("/api/users", userRoutes)
+
+app.use("/api/auth", authRoutes)
 
 export default app; 
